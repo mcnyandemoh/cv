@@ -72,6 +72,13 @@
     a:hover {
       text-decoration: underline;
     }
+    /* Warning box for disclaimers (optional) */
+    .warning {
+      color: #d9534f;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
@@ -83,6 +90,11 @@
   <div class="contact-info">
     <p><strong>Phone:</strong> +231 775453644 | <strong>Email:</strong> <a href="mailto:mcnyandemoh@outlook.com">mcnyandemoh@outlook.com</a></p>
     <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/henry-nyandemoh-513801235/" target="_blank">Henry Nyandemoh</a> | Paynesville, Monrovia, Liberia</p>
+  </div>
+
+  <!-- Optional disclaimer warning -->
+  <div class="warning">
+    *Content copying & screenshots are discouraged but not fully preventable*
   </div>
 
   <!-- Professional Summary -->
@@ -204,5 +216,33 @@
   <div class="footer">
     &copy; 2025 Henry N. Hodge. All rights reserved.
   </div>
+
+  <!-- Attempt to disable screenshot, copy, right-click -->
+  <script>
+    // Disable Right-Click (Context Menu)
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    }, false);
+
+    // Disable certain key presses (Print Screen, Ctrl+C, Ctrl+P, F12, Ctrl+Shift+I)
+    document.addEventListener('keydown', function(e) {
+      // Print Screen Key (KeyCode 44)
+      if (e.keyCode === 44) {
+        e.preventDefault();
+      }
+      // Ctrl + C or Ctrl + P
+      if ((e.ctrlKey && e.key === 'c') || (e.ctrlKey && e.key === 'p')) {
+        e.preventDefault();
+      }
+      // F12
+      if (e.keyCode === 123) {
+        e.preventDefault();
+      }
+      // Ctrl+Shift+I (DevTools)
+      if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+      }
+    }, false);
+  </script>
 </body>
 </html>
